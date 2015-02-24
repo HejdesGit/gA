@@ -7,7 +7,7 @@ module.exports = function (app) {
 };
 
 router.get('/', function (req, res, next) {
-     ga.getAnalyticsData(function(analyticsData) {
+     ga.getAnalyticsData(function(analyticsData, req) {
         res.json(analyticsData);
     });
 

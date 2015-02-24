@@ -6,13 +6,14 @@ var GA = require('googleanalytics'),
     util = require('util');
 
 module.exports = (function () {
-    var getAnalyticsData = function (callback) {
+    var getAnalyticsData = function (callback, req) {
        var config = {
             "user": "hejdes@gmail.com",
             "password": ""
         };
         var ga = new GA.GA(config);
 
+        //req.query.id
         ga.login(function (err, token) {
             var options = {
                 'ids': 'ga:98252558',
